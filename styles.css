@@ -1,0 +1,171 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Batasi lebar agar tidak lebih dari ukuran mobile portrait */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: sans-serif;
+  background: #f9f9f9;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "font1";
+    src: url("font/Kefir-Medium.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "font2";
+    src: url("font/Kefir-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* h2 {
+    font-family: "font2";
+    font-size: 18px;
+}
+
+h1 {
+    font-family: "font1";
+    font-size: xx-large;
+} */
+
+.section-1 img {
+    width: 100%;
+    margin: 15px;
+}
+
+.section-1 p {
+    font-family: "font1";
+    font-style: normal;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.section-1 h1 {
+    font-family: "font1";
+    font-size: xx-large;
+    letter-spacing: 7px;
+}
+
+.section-1 h2 {
+    font-family: "font2";
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.section-1 h3 {
+    font-family: "font1";
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+
+.section-5 {
+    display: flex;
+    flex-direction: col;
+}
+
+.section-5 img {
+  width: 50%;
+  height: auto;
+  display: block;
+}
+
+/* Wrapper agar berada di tengah dan responsif */
+.wrapper {
+  width: 100%;
+  max-width: 430px; /* Ukuran fix seperti iPhone 14/15 */
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Container section */
+.container {
+  width: 100%;
+  min-height: 100vh; /* Ganti dari height: 100vh agar scroll normal */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Tombol musik */
+#musicBtn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: #ffffffcc;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.2rem;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Responsive font scaling (opsional) */
+@media screen and (max-width: 375px) {
+  .container {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.5s; }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* full width viewport */
+  height: 100vh; /* full height viewport */
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Gambar di overlay menyesuaikan lebar halaman */
+.overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}

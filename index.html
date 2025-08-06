@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Pernikahan</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrapper">
+  <!-- Musik -->
+    <audio id="bgMusic" loop>
+      <source src="" type="audio/mpeg" />
+    </audio>
+    <button id="musicBtn">🔊</button>
+
+    <!-- Halaman Cover -->
+    <div id="coverPage" class="container section-1">
+        <p class="fade-up delay-1">THE WEDDING OF</p>
+        <h1 class="fade-up delay-1">DHIYA & ROSI</h1>
+        <img class="fade-up delay-2" src="asset/1-2.png" alt="">
+        <h2 class="fade-up delay-2">Kepada Yth:</h2>
+        <h3 class="fade-up delay-2" id="guestName">Tamu Undangan</h3>
+    </div>
+
+    <!-- Isi Undangan -->
+    <div id="sectionsWrapper">
+      <div class="container section-2">
+        <h2 class="fade-up delay-1">Detail Acara</h2>
+        <p class="fade-up delay-2">Sabtu, 12 Juli 2025<br>Gedung Serbaguna Harmoni</p>
+      </div>
+      <div class="container section-3">
+        <h2 class="fade-up delay-1">Penutup</h2>
+        <p class="fade-up delay-2">Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
+      </div>
+      <div class="container section-4">
+        <h1 class="fade-up delay-1">the wedding of</h1>
+        <h2 class="fade-up delay-2">Siti & Fulan</h2>
+        <img src="asset/kucing1.webp" alt="">
+      </div>
+      <div class="container section-5">
+        <h2>Galery Of Us</h2>
+        <img src="asset/foto1.jpg" alt="">
+        <img src="asset/foto2.jpg" alt="">
+      </div>
+    </div>
+  </div>
+<div id="imgOverlay" class="hidden overlay">
+  <img id="zoomedImg" src="" alt="Zoomed Image" />
+</div>
+</div>
+
+  
+
+  <script>
+    function getParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const guestName = getParam("to");
+    const session = getParam("session");
+
+    document.getElementById("guestName").textContent = guestName
+      ? decodeURIComponent(guestName.replace(/\+/g, " "))
+      : "Tamu Undangan";
+
+    const bgMusic = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        bgMusic.pause();
+        musicBtn.textContent = "🔇";
+      } else {
+        bgMusic.play().catch(() => {});
+        musicBtn.textContent = "🔊";
+      }
+      isPlaying = !isPlaying;
+    }
+
+    musicBtn.addEventListener("click", toggleMusic);
+
+    document.body.addEventListener("click", () => {
+      if (!isPlaying) {
+        bgMusic.play().catch(() => {});
+        isPlaying = true;
+        musicBtn.textContent = "🔊";
+      }
+    }, { once: true });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+        });
+    }, {
+        threshold: 0.5
+    });
+    
+    // Elemen overlay dan img yang tampil besar
+    const overlay = document.getElementById("imgOverlay");
+    const zoomedImg = document.getElementById("zoomedImg");
+
+    // Daftar container yang diperbolehkan
+    const allowedContainers = [
+    // document.getElementById("coverPage"),
+    document.querySelector(".section-2"),
+    document.querySelector(".section-4"),
+    document.querySelector(".section-5")
+    ];
+
+    // Loop setiap container dan pasang event untuk img-nya
+    allowedContainers.forEach(container => {
+    if (container) {
+        container.querySelectorAll("img").forEach(img => {
+        img.addEventListener("click", () => {
+            zoomedImg.src = img.src;
+            overlay.classList.remove("hidden");
+        });
+        });
+    }
+    });
+
+    // Tutup overlay saat diklik di luar gambar
+    overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        overlay.classList.add("hidden");
+        zoomedImg.src = "";
+    }
+    });
+    
+    document.querySelectorAll('.fade-up').forEach(el => {
+        observer.observe(el);
+    });
+  </script>
+</body>
+</html>
