@@ -29,19 +29,36 @@ html, body {
     font-style: normal;
 }
 
-/* h2 {
-    font-family: "font2";
-    font-size: 18px;
+.section-1 {
+  background-image: url('asset/bg-1.jpg'); /* Path gambar */
+  background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
+  background-position: center; /* Memusatkan gambar */
+  background-repeat: no-repeat; /* Mencegah gambar berulang */
+  height: 400px; /* Tentukan tinggi container */
+  display: flex; /* Supaya isi bisa diatur posisinya */
+  align-items: center; /* Tengah vertikal */
+  justify-content: center; /* Tengah horizontal */
 }
 
-h1 {
-    font-family: "font1";
-    font-size: xx-large;
-} */
+.section-1-img {
+  margin-top: 50px;
+  margin-bottom: 220px;
+  width: 100%;
+}
 
-.section-1 img {
-    width: 100%;
-    margin: 15px;
+.img1-1 {
+  z-index: 1;
+  position: relative;
+  width: 45%;
+  top: 220px;
+  left: -80px;
+}
+
+.img1-2 {
+    position: absolute;
+    width: 95%;
+    left: 10px;
+    right: 10px;
 }
 
 .section-1 p {
@@ -69,6 +86,87 @@ h1 {
     letter-spacing: 2px;
 }
 
+.section-2 {
+  background-image: url('asset/bg-1.jpg'); /* Path gambar */
+  background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
+  background-position: center; /* Memusatkan gambar */
+  background-repeat: no-repeat; /* Mencegah gambar berulang */
+  height: 400px; /* Tentukan tinggi container */
+  display: flex; /* Supaya isi bisa diatur posisinya */
+  align-items: center; /* Tengah vertikal */
+  justify-content: space-between; /* Tengah horizontal */
+}
+
+.section-2-1 {
+    font-family: "font1";
+    font-style: normal;
+    line-height: 20px;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.section-2-1 p {
+  margin-bottom: 20px;
+}
+
+.section-2-2 {
+  display: flex;
+  align-items: center;
+}
+
+.section-2-2 img {
+  max-width: 45%;
+  height: auto;
+  margin-right: 20px;
+}
+
+.section-2-2 h1 {
+    font-family: "font1";
+    font-weight: lighter;
+    letter-spacing: normal;
+    line-height: 25px;
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.section-2-2 p {
+    font-family: "font1";
+    line-height: 13px;
+    font-weight: 100;
+    font-size: 10px;
+    text-align: left;
+}
+
+.section-2-3 {
+  display: flex;
+  align-items: center;
+}
+
+.section-2-3 img {
+  max-width: 45%;
+  height: auto;
+  margin-left: 20px;
+}
+
+.section-2-3 h1 {
+    font-family: "font1";
+    font-weight: lighter;
+    letter-spacing: normal;
+    line-height: 25px;
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.section-2-3 p {
+    font-family: "font1";
+    font-weight: lighter;
+    line-height: 13px;
+    font-size: 10px;
+    text-align: right;
+}
+
 .section-5 {
     display: flex;
     flex-direction: col;
@@ -78,6 +176,7 @@ h1 {
   width: 50%;
   height: auto;
   display: block;
+
 }
 
 /* Wrapper agar berada di tengah dan responsif */
@@ -129,18 +228,13 @@ h1 {
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .fade-up.show {
   opacity: 1;
   transform: translateY(0);
 }
-
-
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.3s; }
-.delay-3 { transition-delay: 0.5s; }
 
 .overlay {
   position: fixed;

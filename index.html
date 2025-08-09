@@ -16,18 +16,47 @@
 
     <!-- Halaman Cover -->
     <div id="coverPage" class="container section-1">
-        <p class="fade-up delay-1">THE WEDDING OF</p>
-        <h1 class="fade-up delay-1">DHIYA & ROSI</h1>
-        <img class="fade-up delay-2" src="asset/1-2.png" alt="">
-        <h2 class="fade-up delay-2">Kepada Yth:</h2>
-        <h3 class="fade-up delay-2" id="guestName">Tamu Undangan</h3>
+        <p class="fade-up">THE WEDDING OF</p>
+        <h1 class="fade-up">DHIYA & ROSI</h1>
+        <div class="section-1-img">
+          <img class="fade-up img1-2" src="asset/page1/1-2.png" alt="">
+          <img class="fade-up img1-1" src="asset/page1/1-1.png" alt="">
+        </div>
+        <h2 class="fade-up">Kepada Yth:</h2>
+        <h3 class="fade-up" id="guestName">Tamu Undangan</h3>
     </div>
 
     <!-- Isi Undangan -->
     <div id="sectionsWrapper">
       <div class="container section-2">
-        <h2 class="fade-up delay-1">Detail Acara</h2>
-        <p class="fade-up delay-2">Sabtu, 12 Juli 2025<br>Gedung Serbaguna Harmoni</p>
+        <div class="section-2-1">
+          <p class="fade-up">Assalamu'alaikum Wr. Wb</p>
+          <p class="fade-up"> Dengan memohon Ridho dan Rahmat Allah SWT,
+ kami mengundang bapak/ibu/saudara/i sekalian
+ untuk menghadiri acara pernikahan kami</p>
+        </div>
+        <div class="section-2-2">
+          <img class="fade-up" src="asset/page2/2-1.png" alt="">
+          <div>
+            <h1 class="fade-up">Dhiya
+            Miladini
+            Fitrasyahri,
+            S.I.Kom</h1>
+            <p class="fade-up">
+              Putri dari
+            Bapak Ahmad Firmansyah
+            (Alm.)
+            & Ibu Dwi Antari K.A. Roem
+            </p>
+          </div>
+        </div>
+        <div class="section-2-3">
+          <div>
+            <h1 class="fade-up"> Muhammad Rosikhul Ilmi, S.I.Kom</h1>
+            <p class="fade-up"> Putra dari Bapak Al Hasin & Ibu Sri Rokhayat</p>
+          </div>
+          <img class="fade-up" src="asset/page2/2-2.png" alt="">
+        </div>
       </div>
       <div class="container section-3">
         <h2 class="fade-up delay-1">Penutup</h2>
@@ -49,8 +78,6 @@
   <img id="zoomedImg" src="" alt="Zoomed Image" />
 </div>
 </div>
-
-  
 
   <script>
     function getParam(param) {
@@ -99,6 +126,28 @@
     }, {
         threshold: 0.5
     });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const coverPage = document.querySelector("#coverPage");
+    const fadeElements = coverPage.querySelectorAll(".fade-up");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                fadeElements.forEach((el, index) => {
+                    el.style.transitionDelay = `${index * 0.3}s`; // jeda antar elemen
+                    setTimeout(() => {
+                        el.classList.add("show");
+                    }, 200); // jeda awal sebelum mulai animasi
+                });
+                observer.unobserve(coverPage); // stop observe biar cuma sekali animasi
+            }
+        });
+    }, { threshold: 0.1 }); // mulai trigger kalau 20% elemen terlihat
+
+    observer.observe(coverPage);
+});
+
     
     // Elemen overlay dan img yang tampil besar
     const overlay = document.getElementById("imgOverlay");
@@ -135,6 +184,11 @@
     document.querySelectorAll('.fade-up').forEach(el => {
         observer.observe(el);
     });
+
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
   </script>
 </body>
 </html>
