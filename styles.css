@@ -29,6 +29,8 @@ html, body {
     font-style: normal;
 }
 
+/* HALAMAN 1 */
+
 .section-1 {
   background-image: url('asset/bg-1.jpg'); /* Path gambar */
   background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
@@ -109,6 +111,8 @@ html, body {
   margin-bottom: 20px;
 }
 
+/* HALAMAN 2 */
+
 .section-2-2 {
   display: flex;
   align-items: center;
@@ -166,6 +170,55 @@ html, body {
     font-size: 10px;
     text-align: right;
 }
+
+/* HALAMAN 3 */
+
+.section-3 {
+  background-image: url('asset/bg-1.jpg'); /* Path gambar */
+  background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
+  background-position: center; /* Memusatkan gambar */
+  background-repeat: no-repeat; /* Mencegah gambar berulang */
+  height: 400px; /* Tentukan tinggi container */
+  display: flex; /* Supaya isi bisa diatur posisinya */
+  align-items: center; /* Tengah vertikal */
+  justify-content: space-between; /* Tengah horizontal */
+}
+
+.section-3 h1 {
+  font-family: "font1";
+  font-weight: 100;
+  font-size: 15px;
+  letter-spacing: 7px;
+  margin-bottom: 30px;
+}
+
+.section-3 img {
+  width: 100%;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 20px;
+}
+
+.section-3 h2 {
+  font-family: "font1";
+  font-weight: normal;
+  font-size: 21px;
+}
+
+.section-3 p {
+    font-family: "font1";
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 20px;
+}
+
+.section-3-1 {
+  margin: 0%;
+}
+
+/* HALAMAN 4 */
 
 .section-5 {
     display: flex;
