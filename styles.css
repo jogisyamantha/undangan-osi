@@ -32,7 +32,7 @@ html, body {
 /* HALAMAN 1 */
 
 .section-1 {
-  background-image: url('asset/bg-1.jpg'); /* Path gambar */
+  background-image: url('asset/background/bg1.png'); /* Path gambar */
   background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
   background-position: center; /* Memusatkan gambar */
   background-repeat: no-repeat; /* Mencegah gambar berulang */
@@ -89,7 +89,7 @@ html, body {
 }
 
 .section-2 {
-  background-image: url('asset/bg-1.jpg'); /* Path gambar */
+  background-image: url('asset/background/bg2.png'); /* Path gambar */
   background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
   background-position: center; /* Memusatkan gambar */
   background-repeat: no-repeat; /* Mencegah gambar berulang */
@@ -174,7 +174,7 @@ html, body {
 /* HALAMAN 3 */
 
 .section-3 {
-  background-image: url('asset/bg-1.jpg'); /* Path gambar */
+  background-image: url('asset/background/bg3.png'); /* Path gambar */
   background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
   background-position: center; /* Memusatkan gambar */
   background-repeat: no-repeat; /* Mencegah gambar berulang */
@@ -214,15 +214,54 @@ html, body {
   margin-bottom: 20px;
 }
 
-.section-3-1 {
-  margin: 0%;
+.webp-crop {
+  width: 200px;       /* ukuran area */
+  height: 200px;      /* ukuran area */
+  object-fit: cover;  /* crop agar penuh, tanpa distorsi */
+  object-position: center; /* fokus di tengah */
 }
 
 /* HALAMAN 4 */
 
+.section-4 {
+  background-image: url('asset/background/bg456.png'); /* Path gambar */
+  background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
+  background-position: center; /* Memusatkan gambar */
+  background-repeat: no-repeat; /* Mencegah gambar berulang */
+  display: flex; /* Supaya isi bisa diatur posisinya */
+  align-items: center; /* Tengah vertikal */
+  justify-content: space-between; /* Tengah horizontal */
+}
+
+.section-4 h1 {
+  font-family: "font1";
+  letter-spacing: 2px;
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+.section-4-foto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.section-4-foto img.landscape {
+  width: 100%;
+  display: block;
+}
+
+.section-4-foto img.potrait {
+  width: 50%;
+  display: block;
+}
+
+/* HALAMAN 5 */
+
 .section-5 {
     display: flex;
-    flex-direction: col;
 }
 
 .section-5 img {
@@ -245,7 +284,7 @@ html, body {
 /* Container section */
 .container {
   width: 100%;
-  min-height: 100vh; /* Ganti dari height: 100vh agar scroll normal */
+  min-height: 80vh; /* Ganti dari height: 100vh agar scroll normal */
   padding: 20px;
   display: flex;
   flex-direction: column;
