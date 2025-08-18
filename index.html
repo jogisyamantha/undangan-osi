@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Undangan Pernikahan</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="wrapper">
@@ -19,7 +22,7 @@
         <p class="fade-up">THE WEDDING OF</p>
         <h1 class="fade-up">DHIYA & ROSI</h1>
         <div class="section-1-img">
-          <img class="fade-up img1-2" src="asset/page1/1-2.png" alt="">
+          <img class="fade-up img1-2" src="asset/page1/anm-1.webp" alt="">
           <img class="fade-up img1-1" src="asset/page1/1-1.png" alt="">
         </div>
         <h2 class="fade-up">Kepada Yth:</h2>
@@ -53,20 +56,24 @@
         <div class="section-2-3">
           <div>
             <h1 class="fade-up"> Muhammad Rosikhul Ilmi, S.I.Kom</h1>
-            <p class="fade-up"> Putra dari Bapak Al Hasin & Ibu Sri Rokhayat</p>
+            <p class="fade-up"> Putra dari Bapak Al Hasin & Ibu Sri Rokhayati</p>
           </div>
           <img class="fade-up" src="asset/page2/2-2.png" alt="">
         </div>
       </div>
       <div class="container section-3">
-        <h1 class="fade-up">SAVE THE DATE</h1>
-        <img class="fade-up" src="asset/page3/3.1.png" alt="">
-        <img class="fade-up" src="asset/page3/3.2.png" alt="">
-        <img class="fade-up" src="asset/page3/3.3.png" alt="">
-        <h2 class="fade-up">Hotel Merapi Merbabu</h2>
-        <p class="fade-up">Jl. Seturan Raya no.99, Condongcatur, Depok, Sleman</p>
-        <img class="fade-up" src="asset/page3/3.4.png" alt="">
-        <img class="fade-up webp-crop" src="asset/kucing1.webp" alt="">
+        <div class="section-3-1">
+          <h1 class="fade-up">SAVE THE DATE</h1>
+          <img class="fade-up" src="asset/page3/3.1.png" alt="">
+          <img class="fade-up" src="asset/page3/3.2.png" alt="">
+          <img class="fade-up" src="asset/page3/3.3.png" alt="">
+          <h2 class="fade-up">Hotel Merapi Merbabu</h2>
+          <p class="fade-up">Jl. Seturan Raya no.99, Condongcatur, Depok, Sleman</p>
+          <img class="fade-up" src="asset/page3/3.4.png" alt="">
+        </div>
+        <div class="section-3-2">
+          <img class="fade-up webp-crop" src="asset/page3/3.5.webp" alt="">
+        </div>
       </div>
       <div class="container section-4">
         <h1 class="fade-up delay-1">Galery of Us</h1>
@@ -90,11 +97,58 @@
         </div>
       </div>
       <div class="container section-5">
+        <div class="section-5-1">
+          <img class="fade-up" src="asset/page5/1.png" alt="">
+          <img class="fade-up" src="asset/page5/2.png" alt="">
+          <img class="fade-up" src="asset/page5/3.png" alt="">
+          <img class="fade-up" src="asset/page5/4.png" alt="">
+        </div>
+        <div class="section-5-2">
+          <img class="fade-up" src="asset/page5/5-1.webp" alt="">
+        </div>
+      </div>
+      <div class="container section-6">
+        <img class="fade-up" src="asset/page6/6-1.png" alt="">
+        <h1 class="fade-up">Kehadiran dan doa restu Bapak/Ibu/Saudara/i
+merupakan anugerah terindah bagi kami.
+Namun, apabila Bapak/Ibu/Saudara/i hendak
+memberikan tanda kash kepada kami,
+dapat menggunakan fitur di bawah ini.</h1>
+        <img class="fade-up" src="asset/page6/6-3.png" alt="">
       </div>
     </div>
   </div>
 <div id="imgOverlay" class="hidden overlay">
   <img id="zoomedImg" src="" alt="Zoomed Image" />
+</div>
+<div id="specialOverlay" class="hidden overlay">
+  <div class="overlay-content">
+    <div>
+      <img src="asset/page6/6-4.png" alt="">
+      <div class="text-copy">
+        <p id="copyText2">685801685685509</p>
+        <button class="button-2" id="copyBtn2">Copy</button>
+      </div>
+      <span id="copyStatus2"></span>
+    </div>
+    <div>
+      <img src="asset/page6/6-5.png" alt="">
+      <div class="text-copy">
+        <p id="copyText1">8610625747</p>
+        <button class="button-2" id="copyBtn1">Copy</button>
+      </div>
+      <span id="copyStatus1"></span>
+    <div>
+      <img src="asset/page6/6-6.png" alt="">
+      <div class="text-copy-1">
+        <p id="copyText3">Jl. Kaliurang km. 5,6, Pandega Karya no. 22, Caturtunggal, Depok, Sleman - 085156230240</p>
+        <button class="button-2" id="copyBtn3">Copy</button>
+      </div>
+      <span id="copyStatus3"></span>
+      </div>
+    </div>
+    <button class="button-tutup" id="closeSpecial">Tutup</button>
+  </div>
 </div>
 </div>
 
@@ -138,34 +192,40 @@
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-        if (entry.isIntersecting) {
+          if (entry.isIntersecting) {
             entry.target.classList.add('show');
-        }
+          } else {
+            // reset supaya animasi bisa diulang
+            entry.target.classList.remove('show');
+          }
         });
     }, {
         threshold: 0.5
     });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const coverPage = document.querySelector("#coverPage");
-    const fadeElements = coverPage.querySelectorAll(".fade-up");
-
-    const observer = new IntersectionObserver(entries => {
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                fadeElements.forEach((el, index) => {
-                    el.style.transitionDelay = `${index * 0.3}s`; // jeda antar elemen
-                    setTimeout(() => {
-                        el.classList.add("show");
-                    }, 200); // jeda awal sebelum mulai animasi
-                });
-                observer.unobserve(coverPage); // stop observe biar cuma sekali animasi
-            }
-        });
-    }, { threshold: 0.1 }); // mulai trigger kalau 20% elemen terlihat
+          if (entry.isIntersecting) {
+            // ambil semua fade-up dalam 1 container
+            const fadeElements = entry.target.querySelectorAll(".fade-up");
 
-    observer.observe(coverPage);
-});
+            fadeElements.forEach((el, index) => {
+              el.style.transitionDelay = `${index * 0.1}s`;
+              el.classList.add("show");
+            });
+
+            // berhenti observe biar animasi hanya sekali
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      // observe per container (section)
+      document.querySelectorAll(".container").forEach(section => {
+        observer.observe(section);
+      });
+    });
 
     
     // Elemen overlay dan img yang tampil besar
@@ -208,6 +268,55 @@ document.addEventListener("DOMContentLoaded", function () {
         history.scrollRestoration = 'manual';
       }
       window.scrollTo(0, 0);
+
+    // === Overlay khusus 6-3 ===
+    const specialOverlay = document.getElementById("specialOverlay");
+    const closeSpecial = document.getElementById("closeSpecial");
+    const img63 = document.querySelector('img[src="asset/page6/6-3.png"]');
+
+    // buka overlay khusus saat klik 6-3
+    if (img63) {
+      img63.addEventListener("click", () => {
+        specialOverlay.classList.remove("hidden");
+      });
+    }
+
+    // tombol close
+    if (closeSpecial) {
+      closeSpecial.addEventListener("click", () => {
+        specialOverlay.classList.add("hidden");
+      });
+    }
+
+    // klik luar konten -> tutup
+    specialOverlay.addEventListener("click", (e) => {
+      if (e.target === specialOverlay) {
+        specialOverlay.classList.add("hidden");
+      }
+    });
+
+    function setupCopy(buttonId, textId, statusId) {
+      document.getElementById(buttonId).addEventListener("click", function() {
+        const text = document.getElementById(textId).innerText;
+
+        navigator.clipboard.writeText(text).then(() => {
+          document.getElementById(statusId).innerText = "Berhasil dicopy!";
+          setTimeout(() => {
+            document.getElementById(statusId).innerText = "";
+          }, 2000);
+        }).catch(err => {
+          document.getElementById(statusId).innerText = "❌ Gagal copy!";
+          console.error("Copy gagal: ", err);
+        });
+      });
+    }
+
+    // Panggil untuk masing-masing tombol
+    setupCopy("copyBtn1", "copyText1", "copyStatus1");
+    setupCopy("copyBtn2", "copyText2", "copyStatus2");
+    setupCopy("copyBtn3", "copyText3", "copyStatus3");
+
+
   </script>
 </body>
 </html>
