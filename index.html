@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <meta name="format-detection" content="telephone=no">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Undangan Pernikahan</title>
@@ -13,19 +14,26 @@
   <div class="wrapper">
   <!-- Musik -->
     <audio id="bgMusic" loop>
-      <source src="" type="audio/mpeg" />
+      <source src="asset/music-1.mp3" type="audio/mpeg" />
     </audio>
     <button id="musicBtn">🔊</button>
 
     <!-- Halaman Cover -->
+     <!-- <div id="coverOverlay" class="cover-overlay">
+      <div class="cover-content">
+        <h1>Dhiya & Rosi</h1>
+        <p>Yth. Bapak/Ibu/Saudara/i</p>
+        <button id="openInvitation">Buka Undangan</button>
+      </div>
+    </div> -->
     <div id="coverPage" class="container section-1">
         <p class="fade-up">THE WEDDING OF</p>
         <h1 class="fade-up">DHIYA & ROSI</h1>
         <div class="section-1-img">
-          <img class="fade-up img1-2" src="asset/page1/anm-1.webp" alt="">
+          <img class="fade-up img1-2" src="asset/page1/1-2-1.webp" alt="">
           <img class="fade-up img1-1" src="asset/page1/1-1.png" alt="">
         </div>
-        <h2 class="fade-up">Kepada Yth:</h2>
+        <h2 class="fade-up">Yth. Bapak/Ibu/Saudara/i</h2>
         <h3 class="fade-up" id="guestName">Tamu Undangan</h3>
     </div>
 
@@ -67,9 +75,11 @@
           <img class="fade-up" src="asset/page3/3.1.png" alt="">
           <img class="fade-up" src="asset/page3/3.2.png" alt="">
           <img class="fade-up" src="asset/page3/3.3.png" alt="">
-          <h2 class="fade-up">Hotel Merapi Merbabu</h2>
+          <h2 class="fade-up">Hotel Merapi Merbabu (Tanjung Sari Ballroom)</h2>
           <p class="fade-up">Jl. Seturan Raya no.99, Condongcatur, Depok, Sleman</p>
-          <img class="fade-up" src="asset/page3/3.4.png" alt="">
+          <a href="https://maps.app.goo.gl/5krZKaFV5NdNGjMy5?g_st=ipc" target="_blank">
+            <img class="fade-up" src="asset/page3/3.4.png" alt="">
+          </a>
         </div>
         <div class="section-3-2">
           <img class="fade-up webp-crop" src="asset/page3/3.5.webp" alt="">
@@ -89,11 +99,9 @@
           <img class="potrait fade-up" src="asset/foto/foto9.jpg" alt="">
           <img class="potrait fade-up" src="asset/foto/foto10.jpg" alt="">
           <img class="potrait fade-up" src="asset/foto/foto11.jpg" alt="">
-          <img class="potrait fade-up" src="asset/foto/foto12.jpg" alt="">
-          <img class="potrait fade-up" src="asset/foto/foto13.jpg" alt="">
           <img class="landscape fade-up" src="asset/foto/foto14.jpg" alt="">
           <img class="potrait fade-up" src="asset/foto/foto15.jpg" alt="">
-          <img class="potrait fade-up" src="asset/foto/foto16.jpg" alt="">
+          <img class="potrait fade-up" src="asset/foto/foto12.jpg" alt="">
         </div>
       </div>
       <div class="container section-5">
@@ -104,7 +112,7 @@
           <img class="fade-up" src="asset/page5/4.png" alt="">
         </div>
         <div class="section-5-2">
-          <img class="fade-up" src="asset/page5/5-1.webp" alt="">
+          <img class="fade-up" src="asset/page5/5-1-1.webp" alt="">
         </div>
       </div>
       <div class="container section-6">
@@ -115,6 +123,11 @@ Namun, apabila Bapak/Ibu/Saudara/i hendak
 memberikan tanda kash kepada kami,
 dapat menggunakan fitur di bawah ini.</h1>
         <img class="fade-up" src="asset/page6/6-3.png" alt="">
+        <p class="fade-up">*Tanpa mengurangi rasa hormat, mohon maaf kami tidak menerima tamu di rumah</p>
+      </div>
+      <div class="container section-7">
+        <img class="section-7-1 fade-up" src="asset/page7/7-1.png" alt="">
+        <img class="section-7-2 fade-up" src="asset/page7/7-2.png" alt="">
       </div>
     </div>
   </div>
@@ -124,7 +137,7 @@ dapat menggunakan fitur di bawah ini.</h1>
 <div id="specialOverlay" class="hidden overlay">
   <div class="overlay-content">
     <div>
-      <img src="asset/page6/6-4.png" alt="">
+      <img src="asset/page6/6-4-1.png" alt="">
       <div class="text-copy">
         <p id="copyText2">685801685685509</p>
         <button class="button-2" id="copyBtn2">Copy</button>
@@ -132,14 +145,14 @@ dapat menggunakan fitur di bawah ini.</h1>
       <span id="copyStatus2"></span>
     </div>
     <div>
-      <img src="asset/page6/6-5.png" alt="">
+      <img src="asset/page6/6-5-1.png" alt="">
       <div class="text-copy">
         <p id="copyText1">8610625747</p>
         <button class="button-2" id="copyBtn1">Copy</button>
       </div>
       <span id="copyStatus1"></span>
     <div>
-      <img src="asset/page6/6-6.png" alt="">
+      <img src="asset/page6/6-6-1.png" alt="">
       <div class="text-copy-1">
         <p id="copyText3">Jl. Kaliurang km. 5,6, Pandega Karya no. 22, Caturtunggal, Depok, Sleman - 085156230240</p>
         <button class="button-2" id="copyBtn3">Copy</button>
@@ -194,39 +207,34 @@ dapat menggunakan fitur di bawah ini.</h1>
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show');
-          } else {
-            // reset supaya animasi bisa diulang
-            entry.target.classList.remove('show');
           }
         });
     }, {
         threshold: 0.5
     });
+document.addEventListener("DOMContentLoaded", function () {
+  const fadeElements = document.querySelectorAll(".fade-up");
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // ambil semua fade-up dalam 1 container
-            const fadeElements = entry.target.querySelectorAll(".fade-up");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const rectTop = entry.boundingClientRect.top;
 
-            fadeElements.forEach((el, index) => {
-              el.style.transitionDelay = `${index * 0.1}s`;
-              el.classList.add("show");
-            });
-
-            // berhenti observe biar animasi hanya sekali
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.3 });
-
-      // observe per container (section)
-      document.querySelectorAll(".container").forEach(section => {
-        observer.observe(section);
-      });
+      if (entry.isIntersecting) {
+        // Selalu tampilkan ketika masuk viewport
+        entry.target.classList.add("show");
+      } else {
+        // Hanya hapus animasi jika elemen ada di bawah (belum lewat ke atas)
+        if (rectTop > 0) {
+          entry.target.classList.remove("show");
+        }
+      }
     });
+  }, {
+    threshold: 0.1
+  });
 
+  fadeElements.forEach(el => observer.observe(el));
+});
     
     // Elemen overlay dan img yang tampil besar
     const overlay = document.getElementById("imgOverlay");
@@ -235,9 +243,7 @@ dapat menggunakan fitur di bawah ini.</h1>
     // Daftar container yang diperbolehkan
     const allowedContainers = [
     // document.getElementById("coverPage"),
-    document.querySelector(".section-2"),
     document.querySelector(".section-4"),
-    document.querySelector(".section-5")
     ];
 
     // Loop setiap container dan pasang event untuk img-nya
@@ -260,9 +266,6 @@ dapat menggunakan fitur di bawah ini.</h1>
     }
     });
     
-    document.querySelectorAll('.fade-up').forEach(el => {
-        observer.observe(el);
-    });
 
       if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
@@ -316,6 +319,19 @@ dapat menggunakan fitur di bawah ini.</h1>
     setupCopy("copyBtn2", "copyText2", "copyStatus2");
     setupCopy("copyBtn3", "copyText3", "copyStatus3");
 
+// const coverOverlay = document.getElementById("coverOverlay");
+// const openInvitation = document.getElementById("openInvitation");
+
+// openInvitation.addEventListener("click", () => {
+//   coverOverlay.classList.add("hidden");
+
+//   // Opsional: bisa play musik ketika tombol diklik
+//   if (!isPlaying) {
+//     bgMusic.play().catch(() => {});
+//     isPlaying = true;
+//     musicBtn.textContent = "🔊";
+//   }
+// });
 
   </script>
 </body>
